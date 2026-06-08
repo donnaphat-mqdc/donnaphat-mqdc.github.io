@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+  <p>Your idToken:</p>
+  <textarea id="out" rows="6" style="width:100%;word-break:break-all"></textarea>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+    liff.init({ liffId: "2010332332-5f6apeCN" }).then(() => {
+      if (!liff.isLoggedIn()) { liff.login(); return; }
+      document.getElementById("out").value = liff.getIDToken();
+    });
+  </script>
+</body>
+</html>
